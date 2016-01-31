@@ -1,15 +1,20 @@
 package proxy
 
 import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.servlet.ServletContextHandler
+import org.eclipse.jetty.webapp.WebAppContext
 
-object WebServer extends App{
-    val server:Server = new Server(8082)
+object WebServer extends App {
+  val server: Server = new Server(8082)
+  val context = new WebAppContext()
 
-    val megaproxyServlet:ProxyServlet = new ProxyServlet()
+  context.setContextPath("/")
+  val lifecycleListener = new ScalatraBootstrap()
+  context.addEventListener(lifecycleListener)
 
-    server.set
+
+
+  server.addLifeCycleListener(lifecycleListener.)
 
   server.start()
-    server.join()
+  server.join()
 }

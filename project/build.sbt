@@ -15,3 +15,5 @@ libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.5"
 libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "9.1.0.v20131115"
 
 libraryDependencies += "org.eclipse.jetty" % "jetty-plus" % "9.1.0.v20131115"
+
+libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
