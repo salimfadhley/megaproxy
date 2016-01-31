@@ -1,14 +1,21 @@
 package proxy
 
-import org.scalatra.ScalatraServlet
+//
+//import org.json4s.{DefaultFormats, Formats}
+//import org.scalatra.json._
 
 /**
   * Created by salim on 30/01/2016.
   */
 class ProxyServlet extends ScalatraServlet {
 
+  //  protected implicit val jsonFormats: Formats = DefaultFormats
+
   get("/") {
-    "<html><body><p>Hello World</p></body></html>"
+
+    response.setHeader("content-type", "text/html")
+
+    "<html><head><title>Hello World!</title></head><body><p>Hello World</p></body></html>"
 
   }
 
