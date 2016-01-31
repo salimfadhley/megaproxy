@@ -1,5 +1,6 @@
 package proxy
 import javax.servlet.ServletContext
+
 import org.scalatra.LifeCycle
 
 /**
